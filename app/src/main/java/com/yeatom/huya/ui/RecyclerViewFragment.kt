@@ -1,5 +1,6 @@
 package com.yeatom.huya.ui
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -8,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.yeatom.huya.LiveComponent
 import com.yeatom.huya.R
-import com.yeatom.huya.ui.placeholder.PlaceholderContent
 
 /**
  * A fragment representing a list of Items.
@@ -37,7 +38,17 @@ class RecyclerViewFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = HomePageListAdapter().apply {
+                    submitList(LiveComponent.ITEMS)
+                }
+                addItemDecoration(object : RecyclerView.ItemDecoration() {
+                    override fun getItemOffsets(outRect: Rect, itemPosition: Int, parent: RecyclerView) {
+                        if (itemPosition % 2 == 1)
+                            outRect.left = 5
+                        else
+                            outRect.right = 5
+                    }
+                })
             }
         }
         return view
