@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Huya</string>
+    <string name="title_home">Home</string>
+    <string name="title_entertainment">Dashboard</string>
+    <string name="title_subscribe">Subscribe</string>
+    <string name="title_huche">Huche</string>
+    <string name="title_profile">Profile</string>
+</resources>

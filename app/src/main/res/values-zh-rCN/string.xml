@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Huya</string>
+    <string name="title_home">首页</string>
+    <string name="title_entertainment">娱乐</string>
+    <string name="title_subscribe">订阅</string>
+    <string name="title_huche">虎扯</string>
+    <string name="title_profile">我的</string>
+</resources>
